@@ -9,14 +9,15 @@ public class Main {
         for (int i = 0; i < squares.length; i++) {
             squares[i]= new Square();
         }
-        for (Circle circle: circles) {
-            circle = new Circle();
+        for (int i = 0; i < circles.length; i++) {
+            circles[i]= new Circle();
         }
-        for (Triangle triangle:triangles) {
-            triangle = new Triangle();
+        for (int i = 0; i < triangles.length; i++) {
+            triangles[i]= new Triangle();
         }
-        for (Trapeze trapeze : trapezes) {
-            trapeze = new Trapeze();
+        for (int i = 0; i < trapezes.length; i++) {
+            trapezes[i]= new Trapeze();
         }
+        System.out.println(Arrays.toString(squares) + Arrays.toString(circles) + Arrays.toString(triangles) + Arrays.toString(trapezes));
     }
 }

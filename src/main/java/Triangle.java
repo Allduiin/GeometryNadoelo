@@ -2,9 +2,8 @@ public class Triangle {
     private double side1;
     private double side2;
     private double side3;
+    private double area;
     private String color;
-    private double p = (side1 + side2 + side3) / 2;
-    private double area = Math.sqrt(p * (p- side1) * (p- side2) * (p- side3));
     String[] colors = {"pink", "red", "blue", "green", "yellow"};
 
 
@@ -13,6 +12,8 @@ public class Triangle {
         side2 = Math.random() * 100;
         side3 = Math.random() * (side1 + side2);
         color = colors[(int)(Math.random() * 4)];
+        double p = (side1 + side2 + side3) / 2;
+        area = Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
 
     public Triangle(double side1, double side2, double side3, String color) {
@@ -21,6 +22,7 @@ public class Triangle {
         this.side3 = side3;
         this.color = color;
     }
+
 
     public double getSide1() {
         return side1;
@@ -44,12 +46,12 @@ public class Triangle {
 
     @Override
     public String toString() {
-        return "Triangle{" +
+        return "Triangle: " +
                 "side1=" + side1 +
                 ", side2=" + side2 +
                 ", side3=" + side3 +
                 ", color='" + color + '\'' +
                 ", area=" + area +
-                '}';
+                '\n';
     }
 }
