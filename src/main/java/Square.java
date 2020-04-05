@@ -33,9 +33,7 @@ public class Square {
     public String toString() {
         return "Square: " +
                 "side=" + side +
-                ", color='" + color + '\'' +
-                ", area=" + area +
-                ", colors=" + Arrays.toString(colors) +
-                '\n';
+                ", color= " + color +
+                ", area=" + area;
     }
 }

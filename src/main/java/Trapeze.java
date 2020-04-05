@@ -13,11 +13,11 @@ public class Trapeze {
         base1 = Math.random() * 100;
         base2 = base1 + Math.random() * 100;
         side1 = Math.random() * 100;
-        side2 = Math.abs(base2 - base1 - side1) + Math.random() * (2 * side1);
+        side2 = Math.abs((base2 - base1) - side1) + Math.random() * (side1 + base2 - base1 - Math.abs((base2 - base1) - side1));
         color = colors[(int)(Math.random() * 4)];
-        double pSides = (side1 + side2 + base2)/2;
+        double pSides = (side1 + side2 + (base2 - base1))/2;
         median = (base1 + base2) / 2;
-        h = Math.sqrt(pSides * (pSides - side1) * (pSides - side2) * (pSides - base2)) * 2 / base2;
+        h = Math.sqrt(pSides * (pSides - side1) * (pSides - side2) * (pSides - (base2 - base1))) * 2 / (base2 - base1);
         s = h * median / 2;
     }
 
@@ -56,10 +56,9 @@ public class Trapeze {
                 ", base2=" + base2 +
                 ", side1=" + side1 +
                 ", side2=" + side2 +
-                ", color='" + color + '\'' +
+                ", color= " + color +
                 ", median=" + median +
                 ", h=" + h +
-                ", s=" + s +
-                '\n';
+                ", s=" + s;
     }
 }

@@ -10,7 +10,7 @@ public class Triangle {
     public Triangle() {
         side1 = Math.random() * 100;
         side2 = Math.random() * 100;
-        side3 = Math.random() * (side1 + side2);
+        side3 = Math.abs(side1 - side2) + Math.random() * (side1 + side2 - Math.abs(side1 - side2));
         color = colors[(int)(Math.random() * 4)];
         double p = (side1 + side2 + side3) / 2;
         area = Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
@@ -50,8 +50,7 @@ public class Triangle {
                 "side1=" + side1 +
                 ", side2=" + side2 +
                 ", side3=" + side3 +
-                ", color='" + color + '\'' +
-                ", area=" + area +
-                '\n';
+                ", color= " + color +
+                ", area=" + area;
     }
 }
